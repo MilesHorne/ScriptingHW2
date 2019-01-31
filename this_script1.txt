@@ -17,3 +17,6 @@ FastTree -gtr -nt < alignment_file.fasta > tree_file.tre
 # the output file is a .tre file (newick format) in the wd that contains trees
 # make script executable by "chmod +x this_script1"
 # submit job by "run_script this_script1"
+
+
+# adding this to the end of the script for HW2
