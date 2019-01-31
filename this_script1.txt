@@ -1,0 +1,19 @@
+#!/bin/sh
+# this script takes a nucleotide alignment and infers a tree with GTR+CAT model
+# load the module
+source /opt/asn/etc/asn-bash-profiles-special/modules.sh
+module load fasttree/2.1.10
+export OMP_NUM_THREADS=1
+## OpenMP in the above line is a way of creating several 'slave threads' wherein
+## your work is split and done concurrently before joining back in master thread
+## in FastTree one thread is sufficient, in FastTreeMP more may be needed
+# place commands here
+FastTree -gtr -nt < alignment_file.fasta > tree_file.tre
+# flag gtr specifies the use of 'generalized time-reversible' model
+# flag nt indicates the use of a nucleotide alignment 
+# < indicates everything to the right is input into the command on the left
+# the input file is a .fasta file in wd that contains nucleotide alignments
+# > takes the output from the left and sends to the file on the right
+# the output file is a .tre file (newick format) in the wd that contains trees
+# make script executable by "chmod +x this_script1"
+# submit job by "run_script this_script1"
