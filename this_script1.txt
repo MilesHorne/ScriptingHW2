@@ -20,3 +20,4 @@ FastTree -gtr -nt < alignment_file.fasta > tree_file.tre
 
 
 # adding this to the end of the script for HW2
+# add another line since the first was initial commit and I wasnt sure that was enough
